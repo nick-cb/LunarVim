@@ -58,14 +58,14 @@ function M.load_defaults()
         command = "nnoremap <silent> <buffer> q :close<CR>",
       },
     },
-    {
-      "VimResized",
-      {
-        group = "_auto_resize",
-        pattern = "*",
-        command = "tabdo wincmd =",
-      },
-    },
+    -- {
+    --   "VimResized",
+    --   {
+    --     group = "_auto_resize",
+    --     pattern = "*",
+    --     command = "tabdo wincmd =",
+    --   },
+    -- },
     {
       "FileType",
       {
