@@ -117,8 +117,8 @@ M.config = function()
           highlight = "PanelHeading",
         },
         {
-          filetype = "packer",
-          text = "Packer",
+          filetype = "lazy",
+          text = "Lazy",
           highlight = "PanelHeading",
           padding = 1,
         },
@@ -194,9 +194,9 @@ function M.buf_kill(kill_command, bufnr, force)
       vim.ui.input({
         prompt = string.format([[%s. Close it anyway? [y]es or [n]o (default: no): ]], warning),
       }, function(choice)
-        if choice ~= nil and choice:match "ye?s?" then force = true end
+        if choice ~= nil and choice:match "ye?s?" then M.buf_kill(kill_command, bufnr, true) end
       end)
-      if not force then return end
+      return
     end
   end
 
